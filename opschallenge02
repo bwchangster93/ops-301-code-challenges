@@ -1,1 +1,23 @@
+#!/bin/bash
+
+
+#How to show time and date
+
+#Running the date command from the terminal to give a general output
+
+echo `date`
+
+#Assign variables
+year=`date +%Y`
+echo "We are on the year $year"
+month=`date +%m`
+echo "The month is $month"
+day=`date +%d`
+echo "Today is the $day"
+echo "Current Date: $day-$month-$year"
+
+#how to append contect to a file
+
+#the >> double carrot will apend to the file. a > single carrot will completely overwrite the file.
+echo "My new string with the date : $(date +%d-%m-%Y)" >>test.txt
 
