@@ -1,23 +1,16 @@
 #!/bin/bash
 
 
-#How to show time and date
+# Create a bash script that:
+# Copies /var/log/syslog to the current working directory
+# Appends the current date and time to the filename
 
-#Running the date command from the terminal to give a general output
 
-echo `date`
+# setting source and destination along with adding date to destination file name
 
-#Assign variables
-year=`date +%Y`
-echo "We are on the year $year"
-month=`date +%m`
-echo "The month is $month"
-day=`date +%d`
-echo "Today is the $day"
-echo "Current Date: $day-$month-$year"
+source="/var/log/syslog"
+current_date=$(date +"%T%m%d_%H%M%S")
+destination="Log_${current_date}.log"
 
-#how to append contect to a file
-
-#the >> double carrot will apend to the file. a > single carrot will completely overwrite the file.
-echo "My new string with the date : $(date +%d-%m-%Y)" >>test.txt
-
+# copy the syslog with current date and add to working directory
+cp "$source" "$destination"
