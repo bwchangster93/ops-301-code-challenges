@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Create a new bash script that performs the following:
+
+# Prompts user for input directory path.
+read -p "Directory Path: " directory_path
+
+# Prompts user for input permissions number (e.g. 777 to perform a chmod 777)
+read -p "Permissions number: " permissions
+
+# Navigates to the directory input by the user and changes all files inside it to the input setting.
+cd "$directory_path"
+chmod -R "$permissions" *
+
+# Prints to the screen the directory contents and the new permissions settings of everything in the directory.
+ls -l
